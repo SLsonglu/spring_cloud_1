@@ -1,0 +1,14 @@
+server:
+  port: 8084
+
+spring:
+  application:
+    name: springcloud-porduct
+
+eureka:
+  client:
+    # 服务路径：注册中心得路径，在当前路径得注册中心进行注册服务
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:8081/server/eureka
+  instance:
+    hostname: localhost

@@ -1,0 +1,19 @@
+server:
+  port: 8081
+  servlet:
+    context-path: /server
+
+spring:
+  application:
+    name: cloud-server
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    # 不注册自己，eureka默认会向注册中心自动注册为客户端
+    fetch-registry: false
+    register-with-eureka: false
+    # 服务路径（注册中心路径）：让其他服务进行注册
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka
